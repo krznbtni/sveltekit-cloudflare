@@ -1,6 +1,11 @@
 <script lang="ts">
-	import Header from './Header.svelte';
+	import { onMount } from 'svelte';
+
 	import './styles.css';
+	import Header from './Header.svelte';
+	import { init } from '../lib/gtm';
+
+	onMount(init);
 </script>
 
 <div class="app">
