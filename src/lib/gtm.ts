@@ -1,4 +1,4 @@
-export function init() {
+export function init(containerId: string) {
 	const w = window;
 
 	w.dataLayer = w.dataLayer || [];
@@ -25,15 +25,19 @@ export function init() {
 		script.type = 'text/javascript';
 		script.async = true;
 		script.defer = true;
-		script.src = `https://gtm.krznbtni.com`;
+		// script.src = `https://gtm.krznbtni.com`;
+		// script.src = `https://gtm.proxy-gtm.workers.dev`;
+		script.src = `https://www.googletagmanager.com/gtm.js?id=${containerId}`;
 
 		document.head.appendChild(script);
 		window.removeEventListener('load', inject);
 	};
 
-	if (windowLoaded) {
-		inject();
-	} else {
-		window.addEventListener('load', inject);
+	if (containerId) {
+		if (windowLoaded) {
+			inject();
+		} else {
+			window.addEventListener('load', inject);
+		}
 	}
 }

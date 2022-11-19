@@ -1,11 +1,13 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
+	// import { onMount } from 'svelte';
 
 	import './styles.css';
 	import Header from './Header.svelte';
-	import { init } from '../lib/gtm';
+	// import { init } from '../lib/gtm';
 
-	onMount(init);
+	// onMount(() => {
+	// 	init('GTM-P8F4HHN');
+	// });
 </script>
 
 <div class="app">
